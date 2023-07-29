@@ -1,5 +1,6 @@
 local push = require("lib.push")
 local c = require("globals.constants")
+local v = require("globals.variables")
 
 -- executed at the beginning of the execution
 function love.load()
