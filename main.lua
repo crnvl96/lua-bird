@@ -1,6 +1,5 @@
 local push = require("lib.push")
 local c = require("globals.constants")
-local v = require("globals.variables")
 
 -- executed at the beginning of the execution
 function love.load()
@@ -27,6 +26,6 @@ end
 function love.draw()
 	push:start()
 	love.graphics.draw(c.BACKGROUND, 0, 0)
-	love.graphics.draw(c.GROUND, 0, c.VIRTUAL_HEIGHT - 16)
-	push:finish()
+	love.graphics.draw(c.BACKGROUND, -v.backgroundScroll, 0)
+	love.graphics.draw(c.GROUND, -v.groundScroll, c.VIRTUAL_HEIGHT - 16)
 end
