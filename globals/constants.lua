@@ -7,10 +7,15 @@ M.VIRTUAL_WIDTH = 512
 M.VIRTUAL_HEIGHT = 288
 
 M.BACKGROUND = love.graphics.newImage("assets/background.png")
-M.GROUND = love.graphics.newImage("assets/ground.png")
+M.BACKGROUND_SCROLL_SPEED = 30
+-- the point on the X axis in which we will render another copy of the image
+-- to give an effect of an infinite scrolling background
+M.BACKGROUND_LOOPING_POINT = 413
 
-return M
+M.GROUND = love.graphics.newImage("assets/ground.png")
 M.GROUND_SCROLL_SPEED = 60
 -- the point on the X axis in which we will render another copy of the image
 -- to give an effect of an infinite scrolling background
 M.GROUND_LOOPING_POINT = 514
+
+return M
