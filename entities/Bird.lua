@@ -10,6 +10,9 @@ function Bird:init()
 
 	self.x = c.VIRTUAL_WIDTH / 2 - (self.width / 2)
 	self.y = c.VIRTUAL_HEIGHT / 2 - (self.height / 2)
+
+	-- bird's Y velocity
+	self.dy = 0
 end
 
 function Bird:render()
