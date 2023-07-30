@@ -19,4 +19,9 @@ function Bird:render()
 	love.graphics.draw(self.image, self.x, self.y)
 end
 
+function Bird:update(dt)
+	self.dy = self.dy + c.GRAVITY * dt
+	self.y = self.y + self.dy
+end
+
 return Bird
