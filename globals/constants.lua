@@ -18,4 +18,6 @@ M.GROUND_SCROLL_SPEED = 60
 -- to give an effect of an infinite scrolling background
 M.GROUND_LOOPING_POINT = 514
 
+M.GRAVITY = 20
+
 return M
