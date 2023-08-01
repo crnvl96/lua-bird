@@ -17,6 +17,8 @@ function love.load()
 		resizable = true,
 		fullscreen = false,
 	})
+
+	love.keyboard.keysPressed = {}
 end
 
 function love.resize(width, height)
