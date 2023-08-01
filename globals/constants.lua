@@ -18,8 +18,16 @@ M.GROUND_SCROLL_SPEED = 60
 -- to give an effect of an infinite scrolling background
 M.GROUND_LOOPING_POINT = 514
 
-M.GRAVITY = 20
+M.GRAVITY = 10
 
-M.BIRD_JUMP = 5
+M.BIRD_JUMP = 3
+
+M.PIPE_IMAGE = love.graphics.newImage("assets/pipe.png")
+
+-- The speed at which the pipes will move in the screen
+M.PIPE_HEIGHT = 288
+M.PIPE_WIDTH = 70
+M.PIPE_SPEED = 60
+M.PIPE_GAP = 90
 
 return M
