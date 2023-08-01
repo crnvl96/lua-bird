@@ -46,6 +46,8 @@ function love.update(dt)
 	v.groundScroll = (v.groundScroll + c.GROUND_SCROLL_SPEED * dt) % c.GROUND_LOOPING_POINT
 
 	bird:update(dt)
+
+	love.keyboard.keysPressed = {}
 end
 
 function love.draw()
