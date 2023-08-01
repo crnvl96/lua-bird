@@ -32,6 +32,14 @@ function love.keypressed(key)
 	end
 end
 
+function love.keyboard.wasPressed(key)
+	if love.keyboard.keysPressed[key] then
+		return true
+	else
+		return false
+	end
+end
+
 function love.update(dt)
 	-- dt is here to make the game framerate independent, in other words, the game will run at the same speed independently of the framerate
 	v.backgroundScroll = (v.backgroundScroll + c.BACKGROUND_SCROLL_SPEED * dt) % c.BACKGROUND_LOOPING_POINT
