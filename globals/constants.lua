@@ -35,4 +35,13 @@ M.MEDIUM_FONT = love.graphics.newFont("assets/fonts/flappy.ttf", 14)
 M.FLAPPY_FONT = love.graphics.newFont("assets/fonts/flappy.ttf", 28)
 M.HUGE_FONT = love.graphics.newFont("assets/fonts/flappy.ttf", 56)
 
+M.COUNTDOWN_TIME = 0.75
+
+M.JUMP_SOUND = love.audio.newSource("assets/sounds/jump.wav", "static")
+M.HURT_SOUND = love.audio.newSource("assets/sounds/hurt.wav", "static")
+M.EXPLOSION_SOUND = love.audio.newSource("assets/sounds/explosion.wav", "static")
+M.SCORE_SOUND = love.audio.newSource("assets/sounds/score.wav", "static")
+
+M.GAME_SOUND = love.audio.newSource("assets/sounds/marios_way.mp3", "static")
+
 return M
