@@ -2,7 +2,7 @@
 
 ## Demo:
 
-https://github.com/crnvl96/LuaBird/assets/84354013/f9596273-ede0-4b2e-b4ec-ef9946324983
+https://github.com/crnvl96/LuaBird/assets/84354013/66420d3e-b51f-458b-88ce-9ef04227ce4a
 
 ## Usage
 
