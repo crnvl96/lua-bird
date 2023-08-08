@@ -6,7 +6,7 @@ local TitleScreenState = Class({ __includes = BaseState })
 
 function TitleScreenState:update()
 	if love.keyboard.wasPressed("enter") or love.keyboard.wasPressed("return") then
-		StateHandler:change("play")
+		StateHandler:change("countdown")
 	end
 end
 

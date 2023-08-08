@@ -35,6 +35,7 @@ function PlayState:update(dt)
 			if pair.x + c.PIPE_WIDTH < self.bird.x then
 				self.score = self.score + 1
 				pair.scored = true
+				Sounds["score"]:play()
 			end
 		end
 
@@ -54,6 +55,8 @@ function PlayState:update(dt)
 	for _, pair in pairs(self.pipePairs) do
 		for _, pipe in pairs(pair.pipes) do
 			if self.bird:collides(pipe) then
+				Sounds["explosion"]:play()
+				Sounds["hurt"]:play()
 				StateHandler:change("score", {
 					score = self.score,
 				})
