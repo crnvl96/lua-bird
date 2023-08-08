@@ -65,6 +65,8 @@ function PlayState:update(dt)
 	end
 
 	if self.bird.y > c.VIRTUAL_HEIGHT - 15 then
+		Sounds["explosion"]:play()
+		Sounds["hurt"]:play()
 		StateHandler:change("score", {
 			score = self.score,
 		})
