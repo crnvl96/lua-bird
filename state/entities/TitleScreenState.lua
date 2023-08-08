@@ -12,7 +12,7 @@ end
 
 function TitleScreenState:render()
 	love.graphics.setFont(c.FLAPPY_FONT)
-	love.graphics.printf("Flappy Bird", 0, 64, c.VIRTUAL_WIDTH, "center")
+	love.graphics.printf("Lua Bird", 0, 64, c.VIRTUAL_WIDTH, "center")
 
 	love.graphics.setFont(c.MEDIUM_FONT)
 	love.graphics.printf("Press Enter", 0, 100, c.VIRTUAL_WIDTH, "center")

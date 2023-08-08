@@ -36,7 +36,7 @@ function love.load()
 	math.randomseed(os.time())
 
 	love.graphics.setDefaultFilter("nearest", "nearest")
-	love.window.setTitle("Flappy Bird")
+	love.window.setTitle("Lua Bird")
 
 	Sounds["game"]:setLooping(true)
 	Sounds["game"]:play()
