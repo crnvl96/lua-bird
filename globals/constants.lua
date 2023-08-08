@@ -6,13 +6,13 @@ M.WINDOW_HEIGHT = 720
 M.VIRTUAL_WIDTH = 512
 M.VIRTUAL_HEIGHT = 288
 
-M.BACKGROUND = love.graphics.newImage("assets/background.png")
+M.BACKGROUND = love.graphics.newImage("assets/images/background.png")
 M.BACKGROUND_SCROLL_SPEED = 30
 -- the point on the X axis in which we will render another copy of the image
 -- to give an effect of an infinite scrolling background
 M.BACKGROUND_LOOPING_POINT = 413
 
-M.GROUND = love.graphics.newImage("assets/ground.png")
+M.GROUND = love.graphics.newImage("assets/images/ground.png")
 M.GROUND_SCROLL_SPEED = 60
 -- the point on the X axis in which we will render another copy of the image
 -- to give an effect of an infinite scrolling background
@@ -22,7 +22,7 @@ M.GRAVITY = 10
 
 M.BIRD_JUMP = 3
 
-M.PIPE_IMAGE = love.graphics.newImage("assets/pipe.png")
+M.PIPE_IMAGE = love.graphics.newImage("assets/images/pipe.png")
 
 -- The speed at which the pipes will move in the screen
 M.PIPE_HEIGHT = 288
