@@ -4,7 +4,7 @@ local c = require("globals.constants")
 local Bird = Class({})
 
 function Bird:init()
-	self.image = love.graphics.newImage("assets/bird.png")
+	self.image = love.graphics.newImage("assets/images/bird.png")
 	self.width = self.image:getWidth()
 	self.height = self.image:getHeight()
 
@@ -34,6 +34,7 @@ function Bird:update(dt)
 
 	if love.keyboard.wasPressed("space") then
 		self.dy = -c.BIRD_JUMP
+		Sounds["jump"]:play()
 	end
 
 	self.y = self.y + self.dy
