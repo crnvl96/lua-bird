@@ -1,13 +1,22 @@
 local push = require("lib.push")
 local c = require("globals.constants")
 local v = require("globals.variables")
-local Bird = require("entities.Bird")
-local PipePair = require("entities.PipePair")
+local stateMachine = require("state.StateMachine")
+local TitleScreenState = require("state.entities.TitleScreenState")
+local PlayState = require("state.entities.PlayState")
+local ScoreState = require("state.entities.ScoreState")
 
--- we want this constant to be available in the entire file
-local bird = Bird()
-
-local pipePairs = {}
+StateHandler = stateMachine({
+	["title"] = function()
+		return TitleScreenState()
+	end,
+	["play"] = function()
+		return PlayState()
+	end,
+	["score"] = function()
+		return ScoreState()
+	end,
+})
 
 -- executed at the beginning of the execution
 function love.load()
@@ -21,6 +30,8 @@ function love.load()
 		resizable = true,
 		fullscreen = false,
 	})
+
+	StateHandler:change("title")
 
 	love.keyboard.keysPressed = {}
 end
@@ -45,50 +56,20 @@ function love.keyboard.wasPressed(key)
 end
 
 function love.update(dt)
-	-- dt is here to make the game framerate independent, in other words, the game will run at the same speed independently of the framerate
 	v.backgroundScroll = (v.backgroundScroll + c.BACKGROUND_SCROLL_SPEED * dt) % c.BACKGROUND_LOOPING_POINT
 	v.groundScroll = (v.groundScroll + c.GROUND_SCROLL_SPEED * dt) % c.GROUND_LOOPING_POINT
 
-	v.pipeSpawnTimer = v.pipeSpawnTimer + dt
-
-	-- Generate a new pipe and reset spawn time counter
-	if v.pipeSpawnTimer > 2 then
-		local pipeGap = math.max(
-			-c.PIPE_HEIGHT + 10,
-			math.min(v.lastPipeGap + math.random(-20, 20), c.VIRTUAL_HEIGHT - 90 - -c.PIPE_HEIGHT)
-		)
-
-		v.lastPipeGap = pipeGap
-
-		table.insert(pipePairs, PipePair(pipeGap))
-		v.pipeSpawnTimer = 0
-	end
-
-	bird:update(dt)
-
-	for _, pair in pairs(pipePairs) do
-		pair:update(dt)
-	end
-
-	for key, pair in pairs(pipePairs) do
-		if pair.remove then
-			table.remove(pipePairs, key)
-		end
-	end
+	StateHandler:update(dt)
 
 	love.keyboard.keysPressed = {}
 end
 
 function love.draw()
 	push:start()
+
 	love.graphics.draw(c.BACKGROUND, -v.backgroundScroll, 0)
+	StateHandler:render()
 	love.graphics.draw(c.GROUND, -v.groundScroll, c.VIRTUAL_HEIGHT - 16)
-
-	for _, pair in pairs(pipePairs) do
-		pair:render()
-	end
-
-	bird:render()
 
 	push:finish()
 end
