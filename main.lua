@@ -5,10 +5,14 @@ local stateMachine = require("state.StateMachine")
 local TitleScreenState = require("state.entities.TitleScreenState")
 local PlayState = require("state.entities.PlayState")
 local ScoreState = require("state.entities.ScoreState")
+local CountdownState = require("state.entities.CountdownState")
 
 StateHandler = stateMachine({
 	["title"] = function()
 		return TitleScreenState()
+	end,
+	["countdown"] = function()
+		return CountdownState()
 	end,
 	["play"] = function()
 		return PlayState()
@@ -18,12 +22,24 @@ StateHandler = stateMachine({
 	end,
 })
 
+Sounds = {
+	["jump"] = c.JUMP_SOUND,
+	["explosion"] = c.EXPLOSION_SOUND,
+	["hurt"] = c.HURT_SOUND,
+	["score"] = c.SCORE_SOUND,
+	-- https://freesound.org/people/xsgianni/sounds/388079/
+	["game"] = c.GAME_SOUND,
+}
+
 -- executed at the beginning of the execution
 function love.load()
 	math.randomseed(os.time())
 
 	love.graphics.setDefaultFilter("nearest", "nearest")
 	love.window.setTitle("Flappy Bird")
+
+	Sounds["game"]:setLooping(true)
+	Sounds["game"]:play()
 
 	push:setupScreen(c.VIRTUAL_WIDTH, c.VIRTUAL_HEIGHT, c.WINDOW_WIDTH, c.WINDOW_HEIGHT, {
 		vsync = true,
