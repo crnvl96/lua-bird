@@ -9,4 +9,6 @@ M.pipeSpawnTimer = 0
 
 M.lastPipeGap = -c.PIPE_HEIGHT + math.random(80) + 20
 
+M.scrolling = true
+
 return M
