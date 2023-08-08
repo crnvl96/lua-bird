@@ -30,4 +30,9 @@ M.PIPE_WIDTH = 70
 M.PIPE_SPEED = 60
 M.PIPE_GAP = 90
 
+M.stateMachineALL_FONT = love.graphics.newFont("assets/fonts/font.ttf", 8)
+M.MEDIUM_FONT = love.graphics.newFont("assets/fonts/flappy.ttf", 14)
+M.FLAPPY_FONT = love.graphics.newFont("assets/fonts/flappy.ttf", 28)
+M.HUGE_FONT = love.graphics.newFont("assets/fonts/flappy.ttf", 56)
+
 return M
