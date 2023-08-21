@@ -6,7 +6,7 @@ https://github.com/crnvl96/LuaBird/assets/84354013/66420d3e-b51f-458b-88ce-9ef04
 
 ## Usage
 
-- Linux, you must have [LOVE2D](https://love2d.org/wiki/Getting_Started) installed.
+- You must have [LOVE2D](https://love2d.org/wiki/Getting_Started) installed.
 
 - If you're on Windows, download the file `luabird.exe` from the [latest release page](https://github.com/crnvl96/LuaBird/releases/tag/v1.0.1) and execute it
 - If you're on MacOS or Linux, download the file `luabird.love` from the [latest release page](https://github.com/crnvl96/LuaBird/releases/tag/v1.0.1).
